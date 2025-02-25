@@ -10,20 +10,31 @@ import CoreData
 
 struct ContentView: View {
     
+    @State private var imageSystemName = ""
+    @State private var imageText = ""
+    
+    
     var body: some View {
         VStack {
-            Text("Daily Workout")
-                .font(.largeTitle)
+            Image(systemName: imageSystemName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 250, height: 250)
             
-            VStack {
-                Text("Build a workout plan once")
-                
-                Text("Recieve Daily Workout Plan")
-                
-            }
-            .padding()
-            .font(.title3)
+            
+            Text(imageText)
+                .font(.title)
         }
+        
+        Button("Press Me!") {
+            // imageSystemName == image2 ? imageText = message1 : imageText = message2
+            // imageSystemName == image2 ? imageSystemName = image1 : imageSystemName = image2
+                
+        }
+        .buttonStyle(.borderedProminent)
+        .tint(.mint)
+        .font(.title2)
+        
     }
 }
 
