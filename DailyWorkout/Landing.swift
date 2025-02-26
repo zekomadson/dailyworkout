@@ -18,28 +18,44 @@ struct Landing: View {
     
     var body : some View {
         
-        Text(headerText)
-            .font(.largeTitle)
-            .padding()
-        
-        Text(subHeaderText)
-            .font(.title2)
+        VStack {
+            
+            Text(headerText)
+                .font(.largeTitle)
+            
+            Text(subHeaderText)
+                .font(.title2)
+            
+        }
+        .padding()
+        .foregroundStyle(.mint)
         
         Spacer()
         
-        HStack {
+        VStack {
+            Spacer()
             
-            Button(button1Text) {
-                // Nothing Yet
-            }
+            Text("How do you feel today?")
+                .foregroundStyle(.mint)
+                .font(.largeTitle)
             
-            Button(button2Text) {
-                // Nothing Yet
+            // TODO: Convert this to a numeric value that is tracked
+            Text("[Input Numeric Value]")
+                .foregroundStyle(.mint)
+                .font(.largeTitle)
+                .padding(.vertical)
+            
+            Spacer()
+            
+            // TODO: Jump to the Workout Page
+            Button("Begin Workout") {
+                
             }
-        }
             .buttonStyle(.borderedProminent)
             .tint(.mint)
             .font(.largeTitle)
+            
+        }
         
         Spacer()
     }

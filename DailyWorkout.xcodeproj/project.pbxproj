@@ -15,6 +15,7 @@
 		B673DF852D662555002DDBA3 /* DailyWorkout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B673DF832D662555002DDBA3 /* DailyWorkout.xcdatamodeld */; };
 		B673DFAD2D6B73D6002DDBA3 /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFAC2D6B73D6002DDBA3 /* Landing.swift */; };
 		B673DFAF2D6B7897002DDBA3 /* WorkoutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFAE2D6B7897002DDBA3 /* WorkoutPage.swift */; };
+		B673DFB12D6E8EE4002DDBA3 /* TrackWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B673DF842D662555002DDBA3 /* DailyWorkout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyWorkout.xcdatamodel; sourceTree = "<group>"; };
 		B673DFAC2D6B73D6002DDBA3 /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
 		B673DFAE2D6B7897002DDBA3 /* WorkoutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPage.swift; sourceTree = "<group>"; };
+		B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWorkout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B673DF7A2D662554002DDBA3 /* ContentView.swift */,
 				B673DFAC2D6B73D6002DDBA3 /* Landing.swift */,
 				B673DFAE2D6B7897002DDBA3 /* WorkoutPage.swift */,
+				B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */,
 				B673DF7C2D662555002DDBA3 /* Assets.xcassets */,
 				B673DF812D662555002DDBA3 /* Persistence.swift */,
 				B673DF832D662555002DDBA3 /* DailyWorkout.xcdatamodeld */,
@@ -153,6 +156,7 @@
 				B673DF822D662555002DDBA3 /* Persistence.swift in Sources */,
 				B673DFAD2D6B73D6002DDBA3 /* Landing.swift in Sources */,
 				B673DF7B2D662554002DDBA3 /* ContentView.swift in Sources */,
+				B673DFB12D6E8EE4002DDBA3 /* TrackWorkout.swift in Sources */,
 				B673DF792D662554002DDBA3 /* DailyWorkoutApp.swift in Sources */,
 				B673DF852D662555002DDBA3 /* DailyWorkout.xcdatamodeld in Sources */,
 			);

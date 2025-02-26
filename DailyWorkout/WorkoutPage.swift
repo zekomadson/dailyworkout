@@ -55,17 +55,14 @@ struct WorkoutPage: View {
             .font(.largeTitle)
             .foregroundStyle(.mint)
         
-        Spacer()
         
         Text(dailyQuote)
             .foregroundStyle(.mint)
             .font(.title)
-            .padding(.horizontal)
-            .frame(height: 100)
+            .padding()
+            .frame(height: 200)
             .multilineTextAlignment(.center)
             .minimumScaleFactor(0.5)
-        
-        Spacer()
         
         VStack{
             
@@ -89,7 +86,7 @@ struct WorkoutPage: View {
             
             VStack {
                 
-                Text("Muscle Groups")
+                Text("Muscle Groups:")
                     .font(.largeTitle)
                     .foregroundStyle(.white)
                     .font(.title)
@@ -135,13 +132,12 @@ struct WorkoutPage: View {
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
             
             VStack {
-                /**
-                 Button("Track Workout") {
+                let buttonText = "Complete Workout"
+                Button(buttonText) {
                  // TODO: User is guided to a page where they can track or record their workout with NLP or voice memo.
                  // v1: we just store it as a note value within the database.
                  
                  }
-                 */
                 
                 Button("Generate Next Workout") {
                     // Iterate workout day
