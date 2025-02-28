@@ -13,7 +13,7 @@ struct DailyWorkoutApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WorkoutPage()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -19,6 +19,12 @@ struct WorkoutPage: View {
     @State private var dayOfWeekNum = 0 // Day of week within given week
     @State private var weekNum = 0 // Week number within larger workout plan
     
+    // Light or Dark Mode
+    @State private var lightMode = true
+    @State private var lightPrimaryColor: Color = .mint
+    @State private var lightSecondaryColor: Color = .indigo
+    @State private var lightFontColor: Color = .white
+    
     // 6 Week Planning
     @State private var muscleGroupsByDay = ["Biceps / Shoulders", "Back / Legs", "Chest / Shoulders" ,"Legs / Biceps" , "Back / Legs","Full Body","Rest / Cardio"]
     
@@ -31,6 +37,7 @@ struct WorkoutPage: View {
     // Daily Exercise Amounts
     @State private var dailySets = 3
     @State private var dailyReps = "12-15"
+    
     
     // Inspiration
     @State private var quotes = [
@@ -48,21 +55,25 @@ struct WorkoutPage: View {
         , "Do it for you, not them."
         , "Consistency over intensity.\nProgress over perfection.\nFundamentals over fads."
         , "Start over as many times as you need to."
+        , "People do not decide their futures, they decide their habits and their habits decide their futures"
     ]
     
     var body : some View {
         Text(headerText)
             .font(.largeTitle)
-            .foregroundStyle(.mint)
+            .foregroundStyle(lightPrimaryColor)
         
+        Spacer()
         
         Text(dailyQuote)
-            .foregroundStyle(.mint)
+            .foregroundStyle(lightPrimaryColor)
             .font(.title)
-            .padding()
-            .frame(height: 200)
+            .padding(.vertical, 30)
             .multilineTextAlignment(.center)
             .minimumScaleFactor(0.5)
+            .border(.black, width:3)
+       
+        Spacer()
         
         VStack{
             
@@ -71,36 +82,38 @@ struct WorkoutPage: View {
                 Text("Week #: \(weekNum + 1)")
                     .font(.largeTitle)
                     .padding(.top)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(lightFontColor)
                     .font(.title)
                 
                 Text("Workout #: \(dayOfWeekNum + 1)")
                     .font(.largeTitle)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(lightFontColor)
                     .font(.title)
             }
             .frame(width: 300)
             .padding(.bottom)
-            .background(Color.mint)
+            .background(lightPrimaryColor)
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
             
             VStack {
                 
                 Text("Muscle Groups:")
                     .font(.largeTitle)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(lightFontColor)
                     .font(.title)
                 
                 // Find the current daily muscle groups
+                
                 let dailyMuscleGroups = muscleGroupsByDay[workoutNum % muscleGroupsByDay.count]
+                
                 Text(dailyMuscleGroups)
                     .font(.title)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(lightFontColor)
                     .font(.title)
             }
             .frame(width: 300)
             .padding(.bottom)
-            .background(Color.mint)
+            .background(lightPrimaryColor)
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
             
             
@@ -109,12 +122,12 @@ struct WorkoutPage: View {
                 Text("Number of Sets: \(dailySets)")
                     .font(.title)
                     .padding(.top)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(lightFontColor)
                 
             }
             .frame(width: 300)
             .padding(.bottom)
-            .background(Color.mint)
+            .background(lightPrimaryColor)
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
             
             
@@ -123,21 +136,15 @@ struct WorkoutPage: View {
                 Text("Number of Reps: " + dailyReps)
                     .font(.title)
                     .padding(.top)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(lightFontColor)
                 
             }
             .frame(width: 300)
             .padding(.bottom)
-            .background(Color.mint)
+            .background(lightPrimaryColor)
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
             
             VStack {
-                let buttonText = "Complete Workout"
-                Button(buttonText) {
-                 // TODO: User is guided to a page where they can track or record their workout with NLP or voice memo.
-                 // v1: we just store it as a note value within the database.
-                 
-                 }
                 
                 Button("Generate Next Workout") {
                     // Iterate workout day
@@ -150,21 +157,33 @@ struct WorkoutPage: View {
                         dayOfWeekNum = 0
                         
                         // Find new weekly sets and reps
-                        dailySets = numSets[weekNum % numSets.count]
-                        dailyReps = numReps[weekNum % numReps.count]
+                        guard let nextSet = findNextValue(curCount: weekNum, records: numSets) else { return }
+                        dailySets = nextSet
+                        
+                        guard let nextReps = findNextValue(curCount: weekNum, records: numReps) else { return }
+                        dailyReps = nextReps
                     }
                     
                     // Find Daily Muscle Groups
-                    dailyQuote = quotes[workoutNum % quotes.count]
+                    guard let nextQuote = findNextValue(curCount: workoutNum, records: quotes) else { return }
+                    dailyQuote = nextQuote
                     
                 }
-                
             }
             .buttonStyle(.borderedProminent)
-            .tint(Color.indigo)
+            .tint(lightSecondaryColor)
             .font(.title)
         }
+        
         Spacer()
+        
+    }
+    
+    func findNextValue<T>(curCount: Int, records: [T]) -> T? {
+        guard records.count != 0 else {
+            return nil
+        }
+        return records[curCount % records.count]
     }
 }
 

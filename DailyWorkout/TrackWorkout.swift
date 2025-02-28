@@ -18,18 +18,26 @@ let headerText = "You Completed Your Workout!\nCongrats!"
             .padding(.top)
             .multilineTextAlignment(.center)
             .minimumScaleFactor(0.5)
+      
+        Spacer()
         VStack {
             
             Text("How do you feel today?")
-            
+                .padding(.vertical)
             Text("[Input Numeric Value]")
-            
+                .padding(.vertical)
         }
         .foregroundStyle(.mint)
         .font(.largeTitle)
-        .padding(.vertical)
         
         Spacer ()
+        
+        Button("Complete Workout") {
+            // TODO: Go back to homescreen
+        }
+        .buttonStyle(.borderedProminent)
+        .tint(Color.indigo)
+        .font(.title)
     }
 }
 

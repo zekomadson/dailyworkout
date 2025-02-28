@@ -16,6 +16,7 @@ struct Landing: View {
     @State private var button1Text = "Login"
     @State private var button2Text = "Sign Up"
     
+    
     var body : some View {
         
         VStack {
@@ -31,7 +32,10 @@ struct Landing: View {
         .foregroundStyle(.mint)
         
         Spacer()
-        
+       
+        VStack {
+            
+        }
         VStack {
             Spacer()
             
@@ -40,6 +44,7 @@ struct Landing: View {
                 .font(.largeTitle)
             
             // TODO: Convert this to a numeric value that is tracked
+            
             Text("[Input Numeric Value]")
                 .foregroundStyle(.mint)
                 .font(.largeTitle)
