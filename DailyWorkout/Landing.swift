@@ -19,37 +19,40 @@ struct Landing: View {
     
     var body : some View {
         
-        VStack {
+        VStack(spacing: 0){
             
             Text(headerText)
                 .font(.largeTitle)
-            
+                .border(.black, width:3)
+
             Text(subHeaderText)
                 .font(.title2)
-            
+                .border(.black, width:3)
+
         }
         .padding()
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
         .foregroundStyle(.mint)
-        
+        .border(.black, width:3)
+
         Spacer()
        
-        VStack {
-            
-        }
-        VStack {
+        VStack(spacing:0) {
             Spacer()
             
             Text("How do you feel today?")
                 .foregroundStyle(.mint)
                 .font(.largeTitle)
-            
+                .border(.black, width:3)
+
             // TODO: Convert this to a numeric value that is tracked
             
             Text("[Input Numeric Value]")
                 .foregroundStyle(.mint)
                 .font(.largeTitle)
                 .padding(.vertical)
-            
+                .border(.black, width:3)
+
             Spacer()
             
             // TODO: Jump to the Workout Page
@@ -59,9 +62,13 @@ struct Landing: View {
             .buttonStyle(.borderedProminent)
             .tint(.mint)
             .font(.largeTitle)
+            .border(.black, width:3)
+
             
         }
-        
+        .frame(maxWidth: .infinity)
+        .border(.black, width:3)
+
         Spacer()
     }
 }

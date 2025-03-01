@@ -16,24 +16,25 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: imageSystemName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250, height: 250)
+            Text("Welcome to Daily Quote")
             
+            Spacer()
             
-            Text(imageText)
-                .font(.title)
+            Button("Sign Up") {
+                // TODO: Navigate to Signup Page
+                // Phone Number or User Name or Email
+                // Password
+                // Start Date
+            }
+            
+            Button("Login") {
+                // TODO: NAVIGATE TO LOGIN PAGE
+                // Phone Number or Username or Email
+                // Passcode sent to phone, Face ID, or Password
+            }
+            
+            Text("Insert Start Date")
         }
-        
-        Button("Press Me!") {
-            // imageSystemName == image2 ? imageText = message1 : imageText = message2
-            // imageSystemName == image2 ? imageSystemName = image1 : imageSystemName = image2
-                
-        }
-        .buttonStyle(.borderedProminent)
-        .tint(.mint)
-        .font(.title2)
         
     }
 }
