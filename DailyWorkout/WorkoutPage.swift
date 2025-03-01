@@ -71,7 +71,6 @@ struct WorkoutPage: View {
             .padding(.vertical, 30)
             .multilineTextAlignment(.center)
             .minimumScaleFactor(0.5)
-            .border(.black, width:3)
        
         Spacer()
         
