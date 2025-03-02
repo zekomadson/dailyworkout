@@ -18,58 +18,59 @@ struct Landing: View {
     
     
     var body : some View {
-        
-        VStack(spacing: 0){
+        GeometryReader { geometry in
             
-            Text(headerText)
-                .font(.largeTitle)
-                .border(.black, width:3)
+            VStack(spacing: 0){
+                
+                Text(headerText)
+                    .font(.largeTitle)
+                    .padding(.bottom)
+                
+                Text(subHeaderText)
+                    .font(.title2)
 
-            Text(subHeaderText)
-                .font(.title2)
-                .border(.black, width:3)
-
-        }
-        .padding()
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-        .foregroundStyle(.mint)
-        .border(.black, width:3)
-
-        Spacer()
-       
-        VStack(spacing:0) {
-            Spacer()
-            
-            Text("How do you feel today?")
-                .foregroundStyle(.mint)
-                .font(.largeTitle)
-                .border(.black, width:3)
-
-            // TODO: Convert this to a numeric value that is tracked
-            
-            Text("[Input Numeric Value]")
-                .foregroundStyle(.mint)
-                .font(.largeTitle)
-                .padding(.vertical)
-                .border(.black, width:3)
+            }
+            .padding()
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            .foregroundStyle(.mint)
 
             Spacer()
-            
-            // TODO: Jump to the Workout Page
-            Button("Begin Workout") {
+           
+            VStack(spacing:0) {
+                Spacer()
+                
+                Text("How do you feel today?")
+                    .foregroundStyle(.mint)
+                    .font(.largeTitle)
+
+                // TODO: Convert this to a numeric value that is tracked
+                
+                Text("[Input Numeric Value]")
+                    .foregroundStyle(.mint)
+                    .font(.largeTitle)
+                    .padding(.vertical)
+
+                Spacer()
+                
+                Divider()
+                    .padding()
+                    .frame(width: geometry.size.width * 1)
+                
+                // TODO: Jump to the Workout Page
+                Button("Begin Workout") {
+                    
+                }
+                .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.098)
+                .border(.indigo)
+                .tint(.indigo)
+                .font(.largeTitle)
+
                 
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.mint)
-            .font(.largeTitle)
-            .border(.black, width:3)
+            .frame(maxWidth: .infinity)
 
-            
+            Spacer()
         }
-        .frame(maxWidth: .infinity)
-        .border(.black, width:3)
-
-        Spacer()
     }
 }
 

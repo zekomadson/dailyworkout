@@ -16,55 +16,57 @@ struct Login: View {
     
     
     var body: some View {
-        VStack {
-            Text("Login")
-                .font(.largeTitle)
-                .padding(.vertical)
+        GeometryReader { geometry in
+            
+            VStack {
+                Text("Login")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity)
+                    .border(.white, width: 3)
+                    .foregroundStyle(.white)
+                
+                Spacer()
+                
+                VStack(spacing:20){
+                    
+                    Text("Phone / Email")
+                        .font(.largeTitle)
+                        .foregroundStyle(.white)
+                        .frame(width: 350, height: 75)
+                        .background(.lightCherryBlood)
+                        .border(.white, width:3)
+                    
+                    Text("Password")
+                        .font(.largeTitle)
+                        .foregroundStyle(.white)
+                        .frame(width: 350, height: 75)
+                        .background(.lightCherryBlood)
+                        .border(.white, width:3)
+                    
+                }
                 .frame(maxWidth: .infinity)
-                .border(.white, width: 3)
+                .padding(.vertical)
+                .border(.white, width:3)
+                
+                
+                Button("Login") {
+                    // TODO: Navigate to Signup Page
+                    // Phone Number or User Name or Email
+                    // Password
+                    // Start Date
+                }
+                .font(.largeTitle)
                 .foregroundStyle(.white)
-            
-            Spacer()
-            
-            VStack(spacing:20){
+                .frame(width: 250, height: 75)
+                .background(.lightCherryBlood)
+                .clipShape(RoundedRectangle(cornerRadius: CGFloat(25)))
+                .border(.white, width:3)
                 
-                Text("Phone / Email")
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: 350, height: 75)
-                    .background(.lightCherryBlood)
-                    .border(.white, width:3)
-                
-                Text("Password")
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: 350, height: 75)
-                    .background(.lightCherryBlood)
-                    .border(.white, width:3)
-                
+                Spacer()
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical)
-            .border(.white, width:3)
-            
-            
-            Button("Login") {
-                // TODO: Navigate to Signup Page
-                // Phone Number or User Name or Email
-                // Password
-                // Start Date
-            }
-            .font(.largeTitle)
-            .foregroundStyle(.white)
-            .frame(width: 250, height: 75)
-            .background(.lightCherryBlood)
-            .clipShape(RoundedRectangle(cornerRadius: CGFloat(25)))
-            .border(.white, width:3)
-            
-            Spacer()
+            .background(.darkBlood.gradient)
         }
-        .background(.darkBlood.gradient)
-        
     }
 }
 

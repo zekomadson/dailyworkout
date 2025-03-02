@@ -70,146 +70,146 @@ struct WorkoutPage: View {
     ]
     
     var body : some View {
-        VStack(spacing: 0){
+        GeometryReader { geometry in
             
-            Text(headerText)
-                .font(.largeTitle)
-                .foregroundStyle(lightPrimaryColor)
-                .frame(maxWidth:.infinity)
-                .border(.black, width:3)
-            
-            Spacer()
-            
-            Text(dailyQuote)
-                .foregroundStyle(lightPrimaryColor)
-                .font(.title)
-                .padding(.vertical, 30)
-                .multilineTextAlignment(.center)
-                .minimumScaleFactor(0.5)
-                .frame(height: 200)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                .border(.black, width:3)
-
-            Spacer()
-           
-            VStack{
+            VStack(spacing: 0){
                 
-                VStack {
-                    
-                    Text("Week #: \(weekNum + 1)")
-                        .font(.largeTitle)
-                        .padding(.top)
-                        .foregroundStyle(lightFontColor)
-                        .font(.title)
-                        .border(.black, width:3)
-
-                    Text("Workout #: \(dayOfWeekNum + 1)")
-                        .font(.largeTitle)
-                        .foregroundStyle(lightFontColor)
-                        .font(.title)
-                        .border(.black, width:3)
-                }
-                .frame(width: 300)
-                .padding(.bottom)
-                .background(lightPrimaryColor)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
-                .border(.black, width:3)
+                Text(headerText)
+                    .font(.largeTitle)
+                    .foregroundStyle(lightPrimaryColor)
+                    .frame(maxWidth:.infinity)
                 
-                VStack {
-                    
-                    Text("Muscle Groups:")
-                        .font(.largeTitle)
-                        .foregroundStyle(lightFontColor)
-                        .font(.title)
-                        .border(.black, width:3)
-
-
-                    // Find the current daily muscle groups
-                    
-                    let dailyMuscleGroups = muscleGroupsByDay[workoutNum % muscleGroupsByDay.count]
-                    
-                    Text(dailyMuscleGroups)
-                        .font(.title)
-                        .foregroundStyle(lightFontColor)
-                        .font(.title)
-                        .border(.black, width:3)
-                }
-                .frame(width: 300)
-                .padding(.bottom)
-                .background(lightPrimaryColor)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
-                .border(.black, width:3)
-
+                Spacer()
                 
-                VStack {
-                    
-                    Text("Number of Sets: \(dailySets)")
-                        .font(.title)
-                        .padding(.top)
-                        .foregroundStyle(lightFontColor)
-                        .border(.black, width:3)
-
-                }
-                .frame(width: 300)
-                .padding(.bottom)
-                .background(lightPrimaryColor)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
-                .border(.black, width:3)
-
+                Text(dailyQuote)
+                    .foregroundStyle(lightPrimaryColor)
+                    .font(.title)
+                    .padding(.vertical, 30)
+                    .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.5)
+                    .frame(height: 200)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal)
                 
-                VStack {
+                Spacer()
+                Spacer()
+                
+                VStack{
                     
-                    Text("Number of Reps: " + dailyReps)
-                        .font(.title)
-                        .padding(.top)
-                        .foregroundStyle(lightFontColor)
-                        .border(.black, width:3)
-
-                }
-                .frame(width: 300)
-                .padding(.bottom)
-                .background(lightPrimaryColor)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
-                .border(.black, width:3)
-
-                VStack {
-                    
-                    Button("Generate Next Workout") {
-                        // Iterate workout day
-                        workoutNum += 1
-                        dayOfWeekNum += 1
+                    VStack {
                         
-                        // Calculate the number of weeks
-                        if dayOfWeekNum > 6 {
-                            weekNum += 1
-                            dayOfWeekNum = 0
-                            
-                            // Find new weekly sets and reps
-                            guard let nextSet = findNextValue(curCount: weekNum, records: numSets) else { return }
-                            dailySets = nextSet
-                            
-                            guard let nextReps = findNextValue(curCount: weekNum, records: numReps) else { return }
-                            dailyReps = nextReps
-                        }
-
-                        // Find Daily Muscle Groups
-                        guard let nextQuote = findNextValue(curCount: workoutNum, records: quotes) else { return }
-                        dailyQuote = nextQuote
+                        Text("Week #: \(weekNum + 1)")
+                            .font(.largeTitle)
+                            .padding(.top)
+                            .foregroundStyle(lightFontColor)
+                            .font(.title)
+                        
+                        Text("Workout #: \(dayOfWeekNum + 1)")
+                            .font(.largeTitle)
+                            .foregroundStyle(lightFontColor)
+                            .font(.title)
+                    }
+                    .frame(width: 300)
+                    .padding(.bottom)
+                    .background(lightPrimaryColor)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
+                    
+                    VStack {
+                        
+                        Text("Muscle Groups:")
+                            .font(.largeTitle)
+                            .foregroundStyle(lightFontColor)
+                            .font(.title)
+                            .padding(.top)
+                        
+                        
+                        // Find the current daily muscle groups
+                        
+                        let dailyMuscleGroups = muscleGroupsByDay[workoutNum % muscleGroupsByDay.count]
+                        
+                        Text(dailyMuscleGroups)
+                            .font(.title)
+                            .foregroundStyle(lightFontColor)
+                            .font(.title)
+                    }
+                    .frame(width: 300)
+                    .padding(.bottom)
+                    .background(lightPrimaryColor)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
+                    
+                    
+                    VStack {
+                        
+                        Text("Number of Sets: \(dailySets)")
+                            .font(.title)
+                            .padding(.top)
+                            .foregroundStyle(lightFontColor)
                         
                     }
+                    .frame(width: 300)
+                    .padding(.bottom)
+                    .background(lightPrimaryColor)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
+                    
+                    
+                    VStack {
+                        
+                        Text("Number of Reps: " + dailyReps)
+                            .font(.title)
+                            .padding(.top)
+                            .foregroundStyle(lightFontColor)
+                        
+                    }
+                    .frame(width: 300)
+                    .padding(.bottom)
+                    .background(lightPrimaryColor)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
+                    
+                    Spacer()
+                    
+                    Divider()
+                        .frame(width: geometry.size.width * 0.9)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        Button("Generate Next Workout") {
+                            // Iterate workout day
+                            workoutNum += 1
+                            dayOfWeekNum += 1
+                            
+                            // Calculate the number of weeks
+                            if dayOfWeekNum > 6 {
+                                weekNum += 1
+                                dayOfWeekNum = 0
+                                
+                                // Find new weekly sets and reps
+                                guard let nextSet = findNextValue(curCount: weekNum, records: numSets) else { return }
+                                dailySets = nextSet
+                                
+                                guard let nextReps = findNextValue(curCount: weekNum, records: numReps) else { return }
+                                dailyReps = nextReps
+                            }
+                            
+                            // Find Daily Muscle Groups
+                            guard let nextQuote = findNextValue(curCount: workoutNum, records: quotes) else { return }
+                            dailyQuote = nextQuote
+                            
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(lightSecondaryColor)
+                    .font(.title)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(lightSecondaryColor)
-                .font(.title)
-                .border(.black, width:3)
+                
+                Spacer()
             }
-            .border(.black, width:3)
             
-            Spacer()
         }
         
     }
-
+    
     func findNextValue<T>(curCount: Int, records: [T]) -> T? {
         guard records.count != 0 else {
             return nil

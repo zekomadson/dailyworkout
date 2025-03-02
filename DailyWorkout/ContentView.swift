@@ -15,46 +15,51 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            Text("Welcome to Daily Workout")
+        GeometryReader { geometry in
+            
+            VStack {
+                Text("Welcome to Daily Workout")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity)
+                    .border(.mint, width: 3)
+                    .foregroundStyle(.mint)
+                
+                Spacer()
+                
+                Spacer()
+                
+                Button("Sign Up") {
+                    // TODO: Navigate to Signup Page
+                    // Phone Number or User Name or Email
+                    // Password
+                    // Start Date
+                }
                 .font(.largeTitle)
-                .padding(.vertical)
-                .frame(maxWidth: .infinity)
-                .border(.white, width: 3)
                 .foregroundStyle(.white)
-            
-            Spacer()
-            
-            Button("Sign Up") {
-                // TODO: Navigate to Signup Page
-                // Phone Number or User Name or Email
-                // Password
-                // Start Date
+                .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.098)
+                .background(.indigo)
+                .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                .border(.white, width:3)
+                
+                Button("Login") {
+                    // TODO: NAVIGATE TO LOGIN PAGE
+                    // Phone Number or Username or Email
+                    // Passcode sent to phone, Face ID, or Password
+                }
+                
+                .font(.largeTitle)
+                .foregroundStyle(.white)
+                .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.098)
+                .background(.indigo)
+                .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                .border(.white, width:3)
+                
+                Spacer()
             }
-            .font(.largeTitle)
-            .foregroundStyle(.white)
-            .frame(width: 250, height: 75)
-            .background(.lightCherryBlood)
-            .clipShape(RoundedRectangle(cornerRadius: CGFloat(25)))
-            .border(.white, width:3)
-
-            Button("Login") {
-                // TODO: NAVIGATE TO LOGIN PAGE
-                // Phone Number or Username or Email
-                // Passcode sent to phone, Face ID, or Password
-            }
-           
-            .font(.largeTitle)
-            .foregroundStyle(.white)
-            .frame(width: 250, height: 75)
-            .background(.lightCherryBlood)
-            .clipShape(RoundedRectangle(cornerRadius: CGFloat(25)))
-            .border(.white, width:3)
-
-            Spacer()
+            .background(.white)
+            
         }
-        .background(.darkBlood.gradient)
-        
     }
 }
 
