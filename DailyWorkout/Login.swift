@@ -1,14 +1,15 @@
 //
-//  ContentView.swift
+//  Login.swift
 //  DailyWorkout
 //
-//  Created by Zeko Madson on 2/19/25.
+//  Created by Zeko Madson on 3/1/25.
 //
+
 
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct Login: View {
     
     @State private var imageSystemName = ""
     @State private var imageText = ""
@@ -16,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Welcome to Daily Workout")
+            Text("Login")
                 .font(.largeTitle)
                 .padding(.vertical)
                 .frame(maxWidth: .infinity)
@@ -25,7 +26,29 @@ struct ContentView: View {
             
             Spacer()
             
-            Button("Sign Up") {
+            VStack(spacing:20){
+                
+                Text("Phone / Email")
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: 350, height: 75)
+                    .background(.lightCherryBlood)
+                    .border(.white, width:3)
+                
+                Text("Password")
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: 350, height: 75)
+                    .background(.lightCherryBlood)
+                    .border(.white, width:3)
+                
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical)
+            .border(.white, width:3)
+            
+            
+            Button("Login") {
                 // TODO: Navigate to Signup Page
                 // Phone Number or User Name or Email
                 // Password
@@ -37,20 +60,7 @@ struct ContentView: View {
             .background(.lightCherryBlood)
             .clipShape(RoundedRectangle(cornerRadius: CGFloat(25)))
             .border(.white, width:3)
-
-            Button("Login") {
-                // TODO: NAVIGATE TO LOGIN PAGE
-                // Phone Number or Username or Email
-                // Passcode sent to phone, Face ID, or Password
-            }
-           
-            .font(.largeTitle)
-            .foregroundStyle(.white)
-            .frame(width: 250, height: 75)
-            .background(.lightCherryBlood)
-            .clipShape(RoundedRectangle(cornerRadius: CGFloat(25)))
-            .border(.white, width:3)
-
+            
             Spacer()
         }
         .background(.darkBlood.gradient)
@@ -59,5 +69,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    Login()
 }
