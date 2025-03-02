@@ -24,10 +24,14 @@ struct Landing: View {
                 
                 Text(headerText)
                     .font(.largeTitle)
-                    .padding(.bottom)
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.indigo)
                 
                 Text(subHeaderText)
                     .font(.title2)
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.indigo)
 
             }
             .padding()
@@ -40,16 +44,18 @@ struct Landing: View {
                 Spacer()
                 
                 Text("How do you feel today?")
-                    .foregroundStyle(.mint)
-                    .font(.largeTitle)
-
-                // TODO: Convert this to a numeric value that is tracked
-                
-                Text("[Input Numeric Value]")
-                    .foregroundStyle(.mint)
                     .font(.largeTitle)
                     .padding(.vertical)
-
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.indigo)
+                
+                // TODO: Convert this to a numeric value that is tracked
+                Text("[Input Numeric Value]")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.indigo)
+                
                 Spacer()
                 
                 Divider()
@@ -60,11 +66,11 @@ struct Landing: View {
                 Button("Begin Workout") {
                     
                 }
-                .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.098)
-                .border(.indigo)
-                .tint(.indigo)
                 .font(.largeTitle)
-
+                .foregroundStyle(.white)
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                .background(.indigo.gradient)
+                .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                 
             }
             .frame(maxWidth: .infinity)

@@ -22,40 +22,38 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .padding(.vertical)
                     .frame(maxWidth: .infinity)
-                    .border(.mint, width: 3)
-                    .foregroundStyle(.mint)
+                    .foregroundStyle(.indigo)
                 
                 Spacer()
                 
-                Spacer()
-                
-                Button("Sign Up") {
-                    // TODO: Navigate to Signup Page
-                    // Phone Number or User Name or Email
-                    // Password
-                    // Start Date
+                VStack(spacing:20){
+                    
+                    Button("Sign Up") {
+                        // TODO: Navigate to Signup Page
+                        // Phone Number or User Name or Email
+                        // Password
+                        // Start Date
+                    }
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                    .background(.indigo.gradient)
+                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                    
+                    Button("Login") {
+                        // TODO: NAVIGATE TO LOGIN PAGE
+                        // Phone Number or Username or Email
+                        // Passcode sent to phone, Face ID, or Password
+                    }
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                    .background(.indigo.gradient)
+                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                 }
-                .font(.largeTitle)
-                .foregroundStyle(.white)
-                .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.098)
-                .background(.indigo)
-                .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
-                .border(.white, width:3)
-                
-                Button("Login") {
-                    // TODO: NAVIGATE TO LOGIN PAGE
-                    // Phone Number or Username or Email
-                    // Passcode sent to phone, Face ID, or Password
-                }
-                
-                .font(.largeTitle)
-                .foregroundStyle(.white)
-                .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.098)
-                .background(.indigo)
-                .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
-                .border(.white, width:3)
                 
                 Spacer()
+
             }
             .background(.white)
             

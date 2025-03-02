@@ -120,7 +120,6 @@ struct WorkoutPage: View {
                             .font(.largeTitle)
                             .foregroundStyle(lightFontColor)
                             .font(.title)
-                            .padding(.top)
                         
                         
                         // Find the current daily muscle groups
@@ -168,9 +167,7 @@ struct WorkoutPage: View {
                     Spacer()
                     
                     Divider()
-                        .frame(width: geometry.size.width * 0.9)
                     
-                    Spacer()
                     
                     VStack {
                         
