@@ -76,18 +76,18 @@ struct WorkoutPage: View {
                 
                 Text(headerText)
                     .font(.largeTitle)
-                    .foregroundStyle(lightPrimaryColor)
+                    .foregroundStyle(.indigo)
                     .frame(maxWidth:.infinity)
-                
+               
                 Spacer()
                 
                 Text(dailyQuote)
-                    .foregroundStyle(lightPrimaryColor)
+                    .foregroundStyle(.indigo)
                     .font(.title)
                     .padding(.vertical, 30)
                     .multilineTextAlignment(.center)
                     .minimumScaleFactor(0.5)
-                    .frame(height: 200)
+                    .frame(height: geometry.size.height * 0.22)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     .padding(.horizontal)
                 
@@ -109,17 +109,18 @@ struct WorkoutPage: View {
                             .foregroundStyle(lightFontColor)
                             .font(.title)
                     }
-                    .frame(width: 300)
+                    .frame(width: geometry.size.width * 0.9)
                     .padding(.bottom)
-                    .background(lightPrimaryColor)
+                    .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
                     
                     VStack {
                         
                         Text("Muscle Groups:")
                             .font(.largeTitle)
-                            .foregroundStyle(lightFontColor)
+                            .foregroundStyle(.white)
                             .font(.title)
+                            .padding(.top)
                         
                         
                         // Find the current daily muscle groups
@@ -128,12 +129,12 @@ struct WorkoutPage: View {
                         
                         Text(dailyMuscleGroups)
                             .font(.title)
-                            .foregroundStyle(lightFontColor)
+                            .foregroundStyle(.white)
                             .font(.title)
                     }
-                    .frame(width: 300)
+                    .frame(width: geometry.size.width * 0.9)
                     .padding(.bottom)
-                    .background(lightPrimaryColor)
+                    .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
                     
                     
@@ -142,12 +143,12 @@ struct WorkoutPage: View {
                         Text("Number of Sets: \(dailySets)")
                             .font(.title)
                             .padding(.top)
-                            .foregroundStyle(lightFontColor)
+                            .foregroundStyle(.white)
                         
                     }
-                    .frame(width: 300)
+                    .frame(width: geometry.size.width * 0.9)
                     .padding(.bottom)
-                    .background(lightPrimaryColor)
+                    .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
                     
                     
@@ -159,15 +160,17 @@ struct WorkoutPage: View {
                             .foregroundStyle(lightFontColor)
                         
                     }
-                    .frame(width: 300)
+                    .frame(width: geometry.size.width * 0.9)
                     .padding(.bottom)
-                    .background(lightPrimaryColor)
+                    .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
                     
                     Spacer()
                     
                     Divider()
-                    
+                        .padding()
+                        .frame(width: geometry.size.width * 1)
+
                     
                     VStack {
                         
@@ -195,9 +198,11 @@ struct WorkoutPage: View {
                             
                         }
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(lightSecondaryColor)
-                    .font(.title)
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                    .background(.indigo.gradient)
+                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                 }
                 
                 Spacer()
