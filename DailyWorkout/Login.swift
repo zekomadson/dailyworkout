@@ -13,6 +13,8 @@ struct Login: View {
     
     @State private var imageSystemName = ""
     @State private var imageText = ""
+    @State private var email = ""
+    @State private var password = ""
     
     
     var body: some View {
@@ -33,14 +35,14 @@ struct Login: View {
                 
                 VStack(spacing:20){
                     
-                    Text("Phone / Email")
+                    TextField("Phone / Email", text: $email)
                         .font(.largeTitle)
                         .foregroundStyle(.white)
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                         .background(.indigo.gradient)
                         .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    Text("Password")
+                    TextField("Password", text: $password)
                         .font(.largeTitle)
                         .foregroundStyle(.white)
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)

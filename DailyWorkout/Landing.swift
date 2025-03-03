@@ -16,6 +16,8 @@ struct Landing: View {
     @State private var button1Text = "Login"
     @State private var button2Text = "Sign Up"
     
+    @State private var feelNumeric = ""
+    
     
     var body : some View {
         GeometryReader { geometry in
@@ -50,7 +52,8 @@ struct Landing: View {
                     .foregroundStyle(.indigo)
                 
                 // TODO: Convert this to a numeric value that is tracked
-                Text("[Input Numeric Value]")
+                TextField("", text: $feelNumeric)
+                    .keyboardType(.numberPad)
                     .font(.largeTitle)
                     .padding(.vertical)
                     .frame(maxWidth: .infinity)
