@@ -28,32 +28,40 @@ struct ContentView: View {
                 
                 VStack(spacing:20){
                     
-                    Button("Sign Up") {
+                    Button(action: {
                         // TODO: Navigate to Signup Page
                         // Phone Number or User Name or Email
                         // Password
                         // Start Date
+                    }) {
+                        Text("Signup")
+                            .font(.largeTitle)
+                            .foregroundStyle(.indigo)
+                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.indigo, lineWidth: 3)
+                            )
                     }
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                    .background(.indigo.gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
-                    
-                    Button("Login") {
-                        // TODO: NAVIGATE TO LOGIN PAGE
-                        // Phone Number or Username or Email
-                        // Passcode sent to phone, Face ID, or Password
+                    Button(action: {
+                        // TODO: Navigate to Signup Page
+                        // Phone Number or User Name or Email
+                        // Password
+                        // Start Date
+                    }) {
+                        Text("Login")
+                            .font(.largeTitle)
+                            .foregroundStyle(.indigo)
+                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.indigo, lineWidth: 3)
+                            )
                     }
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                    .background(.indigo.gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                 }
-                
                 Spacer()
-
             }
             .background(.white)
             

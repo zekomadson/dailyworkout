@@ -63,26 +63,32 @@ struct SignUp: View {
                         .background(.indigo.gradient)
                         .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    Button("Sign Up") {
+                    
+                    Divider()
+                        .frame(width: geometry.size.width * 0.9)
+
+                    Button(action: {
                         // TODO: Navigate to Signup Page
                         // Phone Number or User Name or Email
                         // Password
                         // Start Date
+                    }) {
+                        Text("Signup")
+                            .font(.largeTitle)
+                            .foregroundStyle(.indigo)
+                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.indigo, lineWidth: 3)
+                            )
                     }
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                    .background(.indigo.gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
 
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical)
                 
-                Divider()
-                    .frame(width: geometry.size.width * 0.9)
                 
-
                 
                 Spacer()
             }

@@ -56,8 +56,9 @@ struct Landing: View {
                     .keyboardType(.numberPad)
                     .font(.largeTitle)
                     .padding(.vertical)
-                    .frame(maxWidth: .infinity)
+                    .frame(width: geometry.size.width * 0.9)
                     .foregroundStyle(.indigo)
+                    .border(.indigo, width: 2)
                 
                 Spacer()
                 
@@ -66,14 +67,22 @@ struct Landing: View {
                     .frame(width: geometry.size.width * 1)
                 
                 // TODO: Jump to the Workout Page
-                Button("Begin Workout") {
-                    
+                
+                Button(action: {
+                    // TODO: Navigate to Signup Page
+                    // Phone Number or User Name or Email
+                    // Password
+                    // Start Date
+                }) {
+                    Text("Begin Workout")
+                        .font(.largeTitle)
+                        .foregroundStyle(.indigo)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.indigo, lineWidth: 3)
+                        )
                 }
-                .font(.largeTitle)
-                .foregroundStyle(.white)
-                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                .background(.indigo.gradient)
-                .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                 
             }
             .frame(maxWidth: .infinity)

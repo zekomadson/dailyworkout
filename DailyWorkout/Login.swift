@@ -49,26 +49,30 @@ struct Login: View {
                         .background(.indigo.gradient)
                         .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    Button("Login") {
+                    Divider()
+                        .frame(width: geometry.size.width * 0.9)
+
+                    Button(action: {
                         // TODO: Navigate to Signup Page
                         // Phone Number or User Name or Email
                         // Password
                         // Start Date
+                    }) {
+                        Text("Login")
+                            .font(.largeTitle)
+                            .foregroundStyle(.indigo)
+                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.indigo, lineWidth: 3)
+                            )
                     }
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                    .background(.indigo.gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
-                    .border(.white, width:3)
-                    
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical)
                 .border(.white, width:3)
                 
-                Divider()
-                    .frame(width: geometry.size.width * 0.9)
                 
                 Spacer()
             }

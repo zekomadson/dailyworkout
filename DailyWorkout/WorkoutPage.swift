@@ -66,6 +66,8 @@ struct WorkoutPage: View {
         , "Be curious. What people call intelligence just boils down to curiousity."
         , "You can start late, look different, be uncertain and still succeed."
         , "Nature finds a way, you will to."
+        , "Every action you take is a vote for the type of person you wish to become."
+        , "You practice and you get better. It's very simple."
         , "We are what we repeatedly do. Excellence is not an act but a habit."
     ]
     
@@ -78,7 +80,7 @@ struct WorkoutPage: View {
                     .font(.largeTitle)
                     .foregroundStyle(.indigo)
                     .frame(maxWidth:.infinity)
-               
+                
                 Spacer()
                 
                 Text(dailyQuote)
@@ -170,12 +172,11 @@ struct WorkoutPage: View {
                     Divider()
                         .padding()
                         .frame(width: geometry.size.width * 1)
-
+                    
                     
                     VStack {
                         
-                        Button("Generate Next Workout") {
-                            // Iterate workout day
+                        Button(action: {
                             workoutNum += 1
                             dayOfWeekNum += 1
                             
@@ -195,21 +196,21 @@ struct WorkoutPage: View {
                             // Find Daily Muscle Groups
                             guard let nextQuote = findNextValue(curCount: workoutNum, records: quotes) else { return }
                             dailyQuote = nextQuote
-                            
+                        }) {
+                            Text("Generate Next Workout")
+                                .font(.largeTitle)
+                                .foregroundStyle(.indigo)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.indigo, lineWidth: 3)
+                                )
                         }
                     }
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                    .background(.indigo.gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                    Spacer()
                 }
-                
-                Spacer()
             }
-            
         }
-        
     }
     
     func findNextValue<T>(curCount: Int, records: [T]) -> T? {
