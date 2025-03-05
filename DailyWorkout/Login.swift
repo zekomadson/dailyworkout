@@ -30,28 +30,35 @@ struct Login: View {
                 
                 Spacer()
                 
-                Divider()
-                    .frame(width: geometry.size.width * 0.9)
                 
                 VStack(spacing:20){
                     
-                    TextField("Phone / Email", text: $email)
-                        .font(.largeTitle)
+                    TextField("", text: $email, prompt:
+                                Text("  Email / Username")
                         .foregroundStyle(.white)
-                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                        .background(.indigo.gradient)
-                        .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                    )
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                    .background(.indigo.gradient)
+                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    TextField("Password", text: $password)
-                        .font(.largeTitle)
+                    TextField("", text: $password, prompt:
+                                Text("  Password")
                         .foregroundStyle(.white)
-                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                        .background(.indigo.gradient)
-                        .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                    )
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                    .background(.indigo.gradient)
+                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                    .tint(.white) // Makes the cursor and selection color white
+                    
+                    Spacer()
                     
                     Divider()
                         .frame(width: geometry.size.width * 0.9)
-
+                    
                     Button(action: {
                         // TODO: Navigate to Signup Page
                         // Phone Number or User Name or Email

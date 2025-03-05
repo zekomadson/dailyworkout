@@ -37,7 +37,7 @@ struct Landing: View {
 
             }
             .padding()
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            .frame(maxWidth: .infinity)
             .foregroundStyle(.mint)
 
             Spacer()
@@ -52,7 +52,10 @@ struct Landing: View {
                     .foregroundStyle(.indigo)
                 
                 // TODO: Convert this to a numeric value that is tracked
-                TextField("", text: $feelNumeric)
+                TextField("", text: $feelNumeric, prompt:
+                           Text("(1 to 10)")
+                                .foregroundStyle(.indigo)
+                )
                     .keyboardType(.numberPad)
                     .font(.largeTitle)
                     .padding(.vertical)
@@ -65,8 +68,6 @@ struct Landing: View {
                 Divider()
                     .padding()
                     .frame(width: geometry.size.width * 1)
-                
-                // TODO: Jump to the Workout Page
                 
                 Button(action: {
                     // TODO: Navigate to Signup Page

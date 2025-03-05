@@ -11,33 +11,22 @@ import CoreData
 
 struct TrackWorkout: View {
     var body : some View {
-let headerText = "You Completed Your Workout!\nCongrats!"
-        Text(headerText)
-            .foregroundStyle(.mint)
-            .font(.title)
-            .padding(.top)
-            .multilineTextAlignment(.center)
-            .minimumScaleFactor(0.5)
-      
-        Spacer()
-        VStack {
-            
-            Text("How do you feel today?")
-                .padding(.vertical)
-            Text("[Input Numeric Value]")
-                .padding(.vertical)
-        }
-        .foregroundStyle(.mint)
-        .font(.largeTitle)
         
-        Spacer ()
-        
-        Button("Complete Workout") {
-            // TODO: Go back to homescreen
+        Button(action: {
+            // TODO: Navigate to Signup Page
+            // Phone Number or User Name or Email
+            // Password
+            // Start Date
+        }) {
+            Text("Begin Workout")
+                .font(.largeTitle)
+                .foregroundStyle(.indigo)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.indigo, lineWidth: 3)
+                )
         }
-        .buttonStyle(.borderedProminent)
-        .tint(Color.indigo)
-        .font(.title)
     }
 }
 
