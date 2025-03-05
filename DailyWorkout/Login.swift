@@ -37,17 +37,20 @@ struct Login: View {
                                 Text("  Email / Username")
                         .foregroundStyle(.white)
                     )
-                    .font(.largeTitle)
+                    .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    TextField("", text: $password, prompt:
+                    SecureField("", text: $password, prompt:
                                 Text("  Password")
                         .foregroundStyle(.white)
                     )
-                    .font(.largeTitle)
+                    .keyboardType(.asciiCapable)
+                    .autocorrectionDisabled()
+                    .textContentType(.newPassword)
+                    .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)

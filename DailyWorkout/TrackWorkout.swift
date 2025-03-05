@@ -12,13 +12,14 @@ import CoreData
 struct TrackWorkout: View {
     var body : some View {
         
+        
         Button(action: {
             // TODO: Navigate to Signup Page
             // Phone Number or User Name or Email
             // Password
             // Start Date
         }) {
-            Text("Begin Workout")
+            Text("Complete Workout")
                 .font(.largeTitle)
                 .foregroundStyle(.indigo)
                 .padding()

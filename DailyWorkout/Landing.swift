@@ -58,13 +58,15 @@ struct Landing: View {
                                 .foregroundStyle(.indigo)
                 )
                     .keyboardType(.numberPad)
+                    .autocorrectionDisabled()
                     .font(.largeTitle)
                     .padding(.vertical)
                     .frame(width: geometry.size.width * 0.9)
                     .foregroundStyle(.indigo)
                     .border(.indigo, width: 2)
                     .padding(.vertical)
-                
+               
+                /*
                 TextField("", text: $feelText, prompt:
                            Text("  Put into words")
                                 .foregroundStyle(.indigo)
@@ -75,6 +77,7 @@ struct Landing: View {
                     .frame(width: geometry.size.width * 0.9)
                     .foregroundStyle(.indigo)
                     .border(.indigo, width: 2)
+                */
                 
                 Spacer()
                 

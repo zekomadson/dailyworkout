@@ -22,6 +22,8 @@ struct SignUp: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var workoutPlanStartDateStr: String = ""
+    @State private var workoutPlanStartDate: Date = Date()
     
     
     var body: some View {
@@ -44,27 +46,35 @@ struct SignUp: View {
                                 Text("  Email / Username")
                         .foregroundStyle(.white)
                     )
-                    .font(.largeTitle)
+                    .keyboardType(.emailAddress)
+                    .autocorrectionDisabled()
+                    .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    TextField("", text: $password, prompt:
+                    SecureField("", text: $password, prompt:
                                 Text("  Password")
                         .foregroundStyle(.white)
                     )
-                    .font(.largeTitle)
+                    .keyboardType(.asciiCapable)
+                    .autocorrectionDisabled()
+                    .textContentType(.newPassword)
+                    .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    TextField("", text: $confirmPassword, prompt:
+                    SecureField("", text: $confirmPassword, prompt:
                                 Text("  Confirm Password")
                         .foregroundStyle(.white)
                     )
-                    .font(.largeTitle)
+                    .keyboardType(.asciiCapable)
+                    .autocorrectionDisabled()
+                    .textContentType(.newPassword)
+                    .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)
@@ -73,15 +83,13 @@ struct SignUp: View {
                     Divider()
                         .frame(width: geometry.size.width * 0.9)
                     
-                    TextField("", text: $confirmPassword, prompt:
-                                Text("  Workout Plan Start")
+                    DatePicker("", selection: $workoutPlanStartDate)
+                        .font(.title)
                         .foregroundStyle(.white)
-                    )
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                    .background(.indigo.gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                        .background(.indigo.gradient)
+                        .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+
                     
                     Spacer()
                     
