@@ -17,6 +17,7 @@ struct Landing: View {
     @State private var button2Text = "Sign Up"
     
     @State private var feelNumeric = ""
+    @State private var feelText = ""
     
     
     var body : some View {
@@ -53,7 +54,19 @@ struct Landing: View {
                 
                 // TODO: Convert this to a numeric value that is tracked
                 TextField("", text: $feelNumeric, prompt:
-                           Text("(1 to 10)")
+                           Text("  (1 to 10)")
+                                .foregroundStyle(.indigo)
+                )
+                    .keyboardType(.numberPad)
+                    .font(.largeTitle)
+                    .padding(.vertical)
+                    .frame(width: geometry.size.width * 0.9)
+                    .foregroundStyle(.indigo)
+                    .border(.indigo, width: 2)
+                    .padding(.vertical)
+                
+                TextField("", text: $feelText, prompt:
+                           Text("  Put into words")
                                 .foregroundStyle(.indigo)
                 )
                     .keyboardType(.numberPad)

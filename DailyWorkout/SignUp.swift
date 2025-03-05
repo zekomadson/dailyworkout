@@ -37,6 +37,7 @@ struct SignUp: View {
                 
                 Spacer()
                 
+                
                 VStack(spacing:20){
                     
                     TextField("", text: $email, prompt:
@@ -61,6 +62,19 @@ struct SignUp: View {
                     
                     TextField("", text: $confirmPassword, prompt:
                                 Text("  Confirm Password")
+                        .foregroundStyle(.white)
+                    )
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
+                    .background(.indigo.gradient)
+                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                    
+                    Divider()
+                        .frame(width: geometry.size.width * 0.9)
+                    
+                    TextField("", text: $confirmPassword, prompt:
+                                Text("  Workout Plan Start")
                         .foregroundStyle(.white)
                     )
                     .font(.largeTitle)
