@@ -31,7 +31,7 @@ struct SignUp: View {
         GeometryReader { geometry in
             
             VStack {
-                Text("Sign Up Page")
+                Text("Create an Account")
                     .font(.largeTitle)
                     .foregroundStyle(.indigo)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
@@ -43,7 +43,7 @@ struct SignUp: View {
                 VStack(spacing:20){
                     
                     TextField("", text: $email, prompt:
-                                Text("  Email / Username")
+                                Text("Email / Username")
                         .foregroundStyle(.white)
                     )
                     .keyboardType(.emailAddress)
@@ -70,7 +70,7 @@ struct SignUp: View {
                     .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
                     TextField("", text: $confirmPassword, prompt:
-                                Text("  Confirm Password")
+                                Text("Confirm Password")
                         .foregroundStyle(.white)
                     )
                     .keyboardType(.asciiCapable)
@@ -105,7 +105,7 @@ struct SignUp: View {
                         // Password
                         // Start Date
                     }) {
-                        Text("Signup")
+                        Text("Create Account")
                             .font(.largeTitle)
                             .foregroundStyle(.indigo)
                             .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)

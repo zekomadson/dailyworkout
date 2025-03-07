@@ -13,7 +13,6 @@
 		B673DF802D662555002DDBA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B673DF7F2D662555002DDBA3 /* Preview Assets.xcassets */; };
 		B673DF822D662555002DDBA3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DF812D662555002DDBA3 /* Persistence.swift */; };
 		B673DF852D662555002DDBA3 /* DailyWorkout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B673DF832D662555002DDBA3 /* DailyWorkout.xcdatamodeld */; };
-		B673DFAD2D6B73D6002DDBA3 /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFAC2D6B73D6002DDBA3 /* Landing.swift */; };
 		B673DFAF2D6B7897002DDBA3 /* WorkoutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFAE2D6B7897002DDBA3 /* WorkoutPage.swift */; };
 		B673DFB12D6E8EE4002DDBA3 /* TrackWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */; };
 		B673DFF22D73D8FE002DDBA3 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFF12D73D8FE002DDBA3 /* SignUp.swift */; };
@@ -28,7 +27,6 @@
 		B673DF7F2D662555002DDBA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B673DF812D662555002DDBA3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B673DF842D662555002DDBA3 /* DailyWorkout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyWorkout.xcdatamodel; sourceTree = "<group>"; };
-		B673DFAC2D6B73D6002DDBA3 /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
 		B673DFAE2D6B7897002DDBA3 /* WorkoutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPage.swift; sourceTree = "<group>"; };
 		B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWorkout.swift; sourceTree = "<group>"; };
 		B673DFD12D71F514002DDBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				B673DF7A2D662554002DDBA3 /* ContentView.swift */,
 				B673DFF12D73D8FE002DDBA3 /* SignUp.swift */,
 				B673DFF32D73DEC6002DDBA3 /* Login.swift */,
-				B673DFAC2D6B73D6002DDBA3 /* Landing.swift */,
 				B673DFAE2D6B7897002DDBA3 /* WorkoutPage.swift */,
 				B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */,
 				B673DF7C2D662555002DDBA3 /* Assets.xcassets */,
@@ -162,7 +159,6 @@
 			files = (
 				B673DFAF2D6B7897002DDBA3 /* WorkoutPage.swift in Sources */,
 				B673DF822D662555002DDBA3 /* Persistence.swift in Sources */,
-				B673DFAD2D6B73D6002DDBA3 /* Landing.swift in Sources */,
 				B673DF7B2D662554002DDBA3 /* ContentView.swift in Sources */,
 				B673DFB12D6E8EE4002DDBA3 /* TrackWorkout.swift in Sources */,
 				B673DFF22D73D8FE002DDBA3 /* SignUp.swift in Sources */,

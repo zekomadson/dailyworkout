@@ -21,7 +21,7 @@ struct Login: View {
         GeometryReader { geometry in
             
             VStack {
-                Text("Login Page")
+                Text("Login")
                     .font(.largeTitle)
                     .padding(.vertical)
                     .frame(maxWidth: .infinity)

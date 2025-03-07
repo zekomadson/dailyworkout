@@ -15,55 +15,66 @@ struct ContentView: View {
     
     
     var body: some View {
-        GeometryReader { geometry in
-            
-            VStack {
-                Text("Welcome to Daily Workout")
-                    .font(.largeTitle)
-                    .padding(.vertical)
-                    .frame(maxWidth: .infinity)
-                    .foregroundStyle(.indigo)
+        NavigationStack {
+            GeometryReader { geometry in
                 
-                Spacer()
-                
-                VStack(spacing:20){
+                VStack {
+                    Text("Welcome to Daily Workout")
+                        .font(.largeTitle)
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity)
+                        .foregroundStyle(.indigo)
                     
-                    Button(action: {
-                        // TODO: Navigate to Signup Page
-                        // Phone Number or User Name or Email
-                        // Password
-                        // Start Date
-                    }) {
-                        Text("Signup")
-                            .font(.largeTitle)
-                            .foregroundStyle(.indigo)
-                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(.indigo, lineWidth: 3)
-                            )
+                    Spacer()
+                    
+                    VStack(spacing:20){
+                        
+                        NavigationLink(destination: SignUp()) {
+                            // TODO: Navigate to Signup Page
+                            // Phone Number or User Name or Email
+                            // Password
+                            // Start Date
+                            Text("Signup")
+                                .font(.largeTitle)
+                                .foregroundStyle(.indigo)
+                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.indigo, lineWidth: 3)
+                                )
+                        }
+                        
+                        NavigationLink(destination: Login()) {
+                            Text("Login")
+                                .font(.largeTitle)
+                                .foregroundStyle(.indigo)
+                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.indigo, lineWidth: 3)
+                                )
+                        }
+                        
+                        NavigationLink(destination: WorkoutPage()) {
+                            Text("Workout Page")
+                                .font(.largeTitle)
+                                .foregroundStyle(.indigo)
+                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.indigo, lineWidth: 3)
+                                )
+                        }
+                        
                     }
-                    Button(action: {
-                        // TODO: Navigate to Signup Page
-                        // Phone Number or User Name or Email
-                        // Password
-                        // Start Date
-                    }) {
-                        Text("Login")
-                            .font(.largeTitle)
-                            .foregroundStyle(.indigo)
-                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(.indigo, lineWidth: 3)
-                            )
-                    }
+                    Spacer()
                 }
-                Spacer()
+                .background(.white)
+                
             }
-            .background(.white)
             
         }
     }
