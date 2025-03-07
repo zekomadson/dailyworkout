@@ -34,22 +34,24 @@ struct Login: View {
                 VStack(spacing:20){
                     
                     TextField("", text: $email, prompt:
-                                Text("  Email / Username")
+                                Text("Email / Username")
                         .foregroundStyle(.white)
                     )
                     .font(.title)
                     .foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
                     SecureField("", text: $password, prompt:
-                                Text("  Password")
+                                Text("Password")
                         .foregroundStyle(.white)
                     )
                     .keyboardType(.asciiCapable)
                     .autocorrectionDisabled()
                     .textContentType(.newPassword)
+                    .multilineTextAlignment(.center)
                     .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
