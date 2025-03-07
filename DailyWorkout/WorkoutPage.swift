@@ -202,6 +202,7 @@ struct WorkoutPage: View {
                             .foregroundStyle(lightFontColor)
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.5)
+                            .padding(.horizontal)
                         
                         
                     }
@@ -221,6 +222,7 @@ struct WorkoutPage: View {
                             .foregroundStyle(lightFontColor)
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.5)
+                            .padding(.horizontal)
                         
                         
                     }
