@@ -48,31 +48,34 @@ struct SignUp: View {
                     )
                     .keyboardType(.emailAddress)
                     .autocorrectionDisabled()
+                    .multilineTextAlignment(.center)
                     .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    SecureField("", text: $password, prompt:
-                                Text("  Password")
+                    TextField("", text: $password, prompt:
+                                Text("Password")
                         .foregroundStyle(.white)
                     )
                     .keyboardType(.asciiCapable)
                     .autocorrectionDisabled()
                     .textContentType(.newPassword)
+                    .multilineTextAlignment(.center)
                     .font(.title)
                     .foregroundStyle(.white)
                     .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
                     .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
                     
-                    SecureField("", text: $confirmPassword, prompt:
+                    TextField("", text: $confirmPassword, prompt:
                                 Text("  Confirm Password")
                         .foregroundStyle(.white)
                     )
                     .keyboardType(.asciiCapable)
                     .autocorrectionDisabled()
+                    .multilineTextAlignment(.center)
                     .textContentType(.newPassword)
                     .font(.title)
                     .foregroundStyle(.white)
