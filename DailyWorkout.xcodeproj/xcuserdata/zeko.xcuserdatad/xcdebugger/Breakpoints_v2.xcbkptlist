@@ -14,10 +14,10 @@
             filePath = "DailyWorkout/WorkoutPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "WorkoutPage"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

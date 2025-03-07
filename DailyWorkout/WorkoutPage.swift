@@ -94,6 +94,10 @@ struct WorkoutPage: View {
         , "Every action you take is a vote for the type of person you wish to become."
         , "You practice and you get better.\nIt's very simple."
         , "We are what we repeatedly do.\nExcellence is not an act but a habit."
+        , "When a measure becomes a target,\nit ceases to be a good measure."
+        , "Nature loves courage.\n You make the commitment and nature will respond to that commitment by removing impossible obstacles."
+        ,"Wilson's Law\nIf you prioritize knowledge and intelligence,\nmoney will continue to come."
+        ,"Everything I do is for the 17-year-old version of myself."
     ]
     
     var body : some View {
