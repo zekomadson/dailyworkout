@@ -44,13 +44,13 @@ struct WorkoutPage: View {
     ]
     
     @State private var dailyCardio = [
-        "20-minute HIIT intervals (30 sec sprint, 90 sec jog) - helps burn chest/bicep workout lactic acid",
-        "25-minute steady-state run at moderate pace - allows recovery while burning calories after back day",
-        "15-minute stair climber followed by 10-minute rowing - complements leg day by targeting different movement patterns",
-        "30-minute incline treadmill walk (12-15% incline) - low-impact option after heavy upper body work",
-        "20-minute elliptical intervals with arms engaged - keeps intensity while being joint-friendly after arm day",
-        "Rest from traditional cardio - your full body workout has sufficient cardio stimulus built in",
-        "45-60 minute zone 2 cardio (heart rate at 60-70% max) - dedicated cardio day for endurance building"
+        "20-minute HIIT intervals (30 sec sprint, 90 sec jog)",
+        "25-minute steady-state run at moderate pace",
+        "15-minute stair climber followed by 10-minute rowing",
+        "30-minute incline treadmill walk (12-15% incline)",
+        "20-minute elliptical intervals with arms engaged",
+        "Rest from traditional cardio",
+        "45-60 minute zone 2 cardio (heart rate at 60-70% max)"
     ]
     
     @State private var numSets = [3, 4, 4, 5, 5, 4]
@@ -102,7 +102,7 @@ struct WorkoutPage: View {
             VStack(spacing: 0){
                 
                 Text(headerText)
-                    .font(.largeTitle)
+                    .font(.title)
                     .foregroundStyle(.indigo)
                     .frame(maxWidth:.infinity)
                 
@@ -110,15 +110,13 @@ struct WorkoutPage: View {
                 
                 Text(dailyQuote)
                     .foregroundStyle(.indigo)
-                    .font(.title)
-                    .padding(.vertical, 30)
+                    .font(.title2)
                     .multilineTextAlignment(.center)
                     .minimumScaleFactor(0.5)
-                    .frame(height: geometry.size.height * 0.22)
+                    .frame(height: geometry.size.height * 0.20)
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
                 
-                Spacer()
                 Spacer()
                 
                 VStack{
@@ -130,16 +128,12 @@ struct WorkoutPage: View {
                     
                     VStack {
                         
-                        Text("Week #: \(weekNum + 1)")
-                            .font(.largeTitle)
+                        Text("Week #: \(weekNum + 1), Workout #: \(dayOfWeekNum + 1)")
+                            .font(.title)
                             .padding(.top)
                             .foregroundStyle(lightFontColor)
                             .font(.title)
-                        
-                        Text("Workout #: \(dayOfWeekNum + 1)")
-                            .font(.largeTitle)
-                            .foregroundStyle(lightFontColor)
-                            .font(.title)
+
                     }
                     .frame(width: geometry.size.width * 0.9)
                     .padding(.bottom)
@@ -149,7 +143,7 @@ struct WorkoutPage: View {
                     VStack {
                         
                         Text("Muscle Groups:")
-                            .font(.largeTitle)
+                            .font(.title)
                             .foregroundStyle(.white)
                             .font(.title)
                             .padding(.top)
@@ -160,7 +154,7 @@ struct WorkoutPage: View {
                         let dailyMuscleGroups = muscleGroupsByDay[workoutNum % muscleGroupsByDay.count]
                         
                         Text(dailyMuscleGroups)
-                            .font(.title)
+                            .font(.title2)
                             .foregroundStyle(.white)
                             .font(.title)
                     }
@@ -204,6 +198,25 @@ struct WorkoutPage: View {
                             .padding(.top)
                             .foregroundStyle(lightFontColor)
                         Text(mgExercises[workoutNum % 7])
+                            .font(.title3)
+                            .foregroundStyle(lightFontColor)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.5)
+                        
+                        
+                    }
+                    .frame(width: geometry.size.width * 0.9)
+                    .padding(.bottom)
+                    .background(.indigo.gradient)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
+                    
+                    VStack {
+                        
+                        Text("Cardio:")
+                            .font(.title)
+                            .padding(.top)
+                            .foregroundStyle(lightFontColor)
+                        Text(dailyCardio[workoutNum % 7])
                             .font(.title3)
                             .foregroundStyle(lightFontColor)
                             .multilineTextAlignment(.center)
