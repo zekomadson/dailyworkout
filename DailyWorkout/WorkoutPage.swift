@@ -67,7 +67,7 @@ struct WorkoutPage: View {
     // Inspiration
     @State private var quotes = [
         "Caring is the coolest thing I've ever seen anyone do."
-        , "You don't have to be extreme. Just consistent."
+        , "You don't have to be extreme.\nJust consistent."
         , "Success lies in relentless execution of the basics."
         , "Everyone knew it was impossible, until a fool who didn't know came along and did it."
         , "The rarest of all human qualities is consistency."
@@ -80,24 +80,28 @@ struct WorkoutPage: View {
         , "Do it for you, not them."
         , "Consistency over intensity.\nProgress over perfection.\nFundamentals over fads."
         , "Start over as many times as you need to."
-        , "People do not decide their futures, they decide their habits and their habits decide their futures"
-        , "Excellence is never an accident. It's always the result of high intention, sincere effort and intelligent execution."
-        , "Go confidently in the direction of your dreams. Live the life you have imagined."
-        , "The calmer you are, the clearer you think."
-        , "You are what you do, not what you say you'll do."
+        , "People do not decide their futures,\nthey decide their habits\nand their habits decide their futures"
+        , "Excellence is never an accident.\nIt's always the result of high intention,\nsincere effort and intelligent execution."
+        , "Go confidently in the direction of your dreams.\nLive the life you have imagined."
+        , "The calmer you are,\nthe clearer you think."
+        , "You are what you do,\nnot what you say you'll do."
         , "If you want to make the wrong decision, ask everyone."
         , "The measure of intelligence is the ability to change."
         , "May your choices reflect your hopes, not your fears."
         , "Be curious. What people call intelligence just boils down to curiousity."
-        , "You can start late, look different, be uncertain and still succeed."
+        , "You can start late, look different,\nbe uncertain and still succeed."
         , "Nature finds a way, you will to."
         , "Every action you take is a vote for the type of person you wish to become."
-        , "You practice and you get better. It's very simple."
-        , "We are what we repeatedly do. Excellence is not an act but a habit."
+        , "You practice and you get better.\nIt's very simple."
+        , "We are what we repeatedly do.\nExcellence is not an act but a habit."
     ]
     
     var body : some View {
         GeometryReader { geometry in
+            
+            let workoutNum  = daysSinceDate(dateString: startDate)
+            let weekNum = workoutNum / 7
+            let dayOfWeekNum = workoutNum % 7
             
             VStack(spacing: 0){
                 
@@ -108,7 +112,7 @@ struct WorkoutPage: View {
                 
                 Spacer()
                 
-                Text(dailyQuote)
+                Text(quotes[workoutNum % quotes.count])
                     .foregroundStyle(.indigo)
                     .font(.title2)
                     .multilineTextAlignment(.center)
@@ -121,9 +125,7 @@ struct WorkoutPage: View {
                 
                 VStack{
                     
-                    let workoutNum  = daysSinceDate(dateString: startDate)
-                    let weekNum = workoutNum / 7
-                    let dayOfWeekNum = workoutNum % 7
+                    
                     
                     
                     VStack {
