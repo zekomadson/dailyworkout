@@ -86,13 +86,25 @@ struct SignUp: View {
                     Divider()
                         .frame(width: geometry.size.width * 0.9)
                     
-                    DatePicker("", selection: $workoutPlanStartDate)
-                        .font(.title)
-                        .foregroundStyle(.white)
-                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.098)
-                        .background(.indigo.gradient)
-                        .clipShape(RoundedRectangle(cornerRadius: CGFloat(20)))
+                   
+                    
+                    
+                    HStack {
+                        ZStack {
+                            Text("Plan Start Date:")
+                                .minimumScaleFactor(0.5)
+                                .font(.title)
+                                .foregroundStyle(.indigo)
+                                .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.098, alignment: .leading)
+                                .padding(.horizontal)
+                                .border(.indigo)
+                            DatePicker("", selection: $workoutPlanStartDate, displayedComponents: .date)
+                            .datePickerStyle(.compact)
+                            .padding(.trailing, 35)
 
+                        }
+                    }
+                    
                     
                     Spacer()
                     

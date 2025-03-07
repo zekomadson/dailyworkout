@@ -129,9 +129,6 @@ struct WorkoutPage: View {
                 
                 VStack{
                     
-                    
-                    
-                    
                     VStack {
                         
                         Text("Week #: \(weekNum + 1), Workout #: \(dayOfWeekNum + 1)")
