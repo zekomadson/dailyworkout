@@ -36,7 +36,7 @@ struct WorkoutPage: View {
     @State private var mgExercises = [
         "Bench Press, Incline Dumbbell Press, Cable Flyes, Chest Dips, Barbell Curls, Hammer Curls, Preacher Curls, Concentration Curls",
         "Pull-ups, Lat Pulldowns, Bent-over Rows, Seated Cable Rows, Tricep Pushdowns",
-        "Squats, Leg Press, Lunges, Leg Extensions, Leg Curls, Shoulder Press, Lateral Raises, Front Raises, Rear Delt Flyes",
+        "Squats, Leg Press, Lunges, Leg Extensions, Leg Curls, Shoulder Press, Lateral Raises, Front Raises",
         "Incline Bench Press, Decline Push-ups, Cable Crossovers, T-Bar Rows, Single-arm Dumbbell Rows, Wide-grip Pull-ups, Face Pulls",
         "EZ Bar Curls, Dumbbell Curls, Rope Pushdowns, Close-grip Bench Press, Hanging Leg Raises, Planks, Russian Twists, Cable Crunches",
         "Deadlifts, Kettlebell Swings, Push Press, Dumbbell Thrusters, Bulgarian Split Squats, Pull-ups, Renegade Rows, Mountain Climbers",
@@ -121,7 +121,7 @@ struct WorkoutPage: View {
                     .font(.title2)
                     .multilineTextAlignment(.center)
                     .minimumScaleFactor(0.5)
-                    .frame(height: geometry.size.height * 0.20)
+                    .frame(height: geometry.size.height * 0.17)
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
                 
@@ -132,7 +132,7 @@ struct WorkoutPage: View {
                     VStack {
                         
                         Text("Week #: \(weekNum + 1), Workout #: \(dayOfWeekNum + 1)")
-                            .font(.title)
+                            .font(.title2)
                             .padding(.top)
                             .foregroundStyle(lightFontColor)
                             .font(.title)
@@ -145,21 +145,14 @@ struct WorkoutPage: View {
                     
                     VStack {
                         
-                        Text("Muscle Groups:")
-                            .font(.title)
+                        let dailyMuscleGroups = muscleGroupsByDay[workoutNum % muscleGroupsByDay.count]
+                        
+                        Text("Muscle Groups: \(dailyMuscleGroups)")
+                            .font(.title2)
                             .foregroundStyle(.white)
                             .font(.title)
                             .padding(.top)
                         
-                        
-                        // Find the current daily muscle groups
-                        
-                        let dailyMuscleGroups = muscleGroupsByDay[workoutNum % muscleGroupsByDay.count]
-                        
-                        Text(dailyMuscleGroups)
-                            .font(.title2)
-                            .foregroundStyle(.white)
-                            .font(.title)
                     }
                     .frame(width: geometry.size.width * 0.9)
                     .padding(.bottom)
@@ -170,7 +163,7 @@ struct WorkoutPage: View {
                     VStack {
                         
                         Text("Number of Sets: \(dailySets)")
-                            .font(.title)
+                            .font(.title2)
                             .padding(.top)
                             .foregroundStyle(.white)
                         
@@ -184,7 +177,7 @@ struct WorkoutPage: View {
                     VStack {
                         
                         Text("Number of Reps: " + dailyReps)
-                            .font(.title)
+                            .font(.title2)
                             .padding(.top)
                             .foregroundStyle(lightFontColor)
                         
@@ -197,7 +190,7 @@ struct WorkoutPage: View {
                     VStack {
                         
                         Text("Exercises:")
-                            .font(.title)
+                            .font(.title2)
                             .padding(.top)
                             .foregroundStyle(lightFontColor)
                         Text(mgExercises[workoutNum % 7])
@@ -217,7 +210,7 @@ struct WorkoutPage: View {
                     VStack {
                         
                         Text("Cardio:")
-                            .font(.title)
+                            .font(.title2)
                             .padding(.top)
                             .foregroundStyle(lightFontColor)
                         Text(dailyCardio[workoutNum % 7])
@@ -234,45 +227,26 @@ struct WorkoutPage: View {
                     .background(.indigo.gradient)
                     .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
                     
-                    Spacer()
-                    
-                    
-                    VStack {
-                        
-                        /*
-                        Button(action: {
-                            workoutNum += 1
-                            dayOfWeekNum += 1
-                            
-                            // Calculate the number of weeks
-                            if dayOfWeekNum > 6 {
-                                weekNum += 1
-                                dayOfWeekNum = 0
-                                
-                                // Find new weekly sets and reps
-                                guard let nextSet = findNextValue(curCount: weekNum, records: numSets) else { return }
-                                dailySets = nextSet
-                                
-                                guard let nextReps = findNextValue(curCount: weekNum, records: numReps) else { return }
-                                dailyReps = nextReps
-                            }
-                            
-                            // Find Daily Muscle Groups
-                            guard let nextQuote = findNextValue(curCount: workoutNum, records: quotes) else { return }
-                            dailyQuote = nextQuote
-                        }) {
-                            Text("Generate Next Workout")
-                                .font(.largeTitle)
-                                .foregroundStyle(.indigo)
-                                .padding()
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(.indigo, lineWidth: 3)
-                                )
-                        }
-                         */
+                    NavigationLink(destination: CompleteWorkout()) {
+                        // TODO: Navigate to Signup Page
+                        // Phone Number or User Name or Email
+                        // Password
+                        // Start Date
+                        Text("Complete Workout")
+                            .font(.title)
+                            .minimumScaleFactor(0.5)
+                            .foregroundStyle(.indigo)
+                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.05)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.indigo, lineWidth: 3)
+                            )
                     }
+
                     Spacer()
+                    
+                    
                 }
             }
         }

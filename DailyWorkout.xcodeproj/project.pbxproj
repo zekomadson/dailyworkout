@@ -17,6 +17,7 @@
 		B673DFB12D6E8EE4002DDBA3 /* TrackWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */; };
 		B673DFF22D73D8FE002DDBA3 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFF12D73D8FE002DDBA3 /* SignUp.swift */; };
 		B673DFF42D73DEC6002DDBA3 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673DFF32D73DEC6002DDBA3 /* Login.swift */; };
+		B673E05F2D7CBAE8002DDBA3 /* CompleteWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673E05E2D7CBAE8002DDBA3 /* CompleteWorkout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B673DFD12D71F514002DDBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B673DFF12D73D8FE002DDBA3 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		B673DFF32D73DEC6002DDBA3 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B673E05E2D7CBAE8002DDBA3 /* CompleteWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteWorkout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				B673DFF12D73D8FE002DDBA3 /* SignUp.swift */,
 				B673DFF32D73DEC6002DDBA3 /* Login.swift */,
 				B673DFAE2D6B7897002DDBA3 /* WorkoutPage.swift */,
+				B673E05E2D7CBAE8002DDBA3 /* CompleteWorkout.swift */,
 				B673DFB02D6E8EE4002DDBA3 /* TrackWorkout.swift */,
 				B673DF7C2D662555002DDBA3 /* Assets.xcassets */,
 				B673DF812D662555002DDBA3 /* Persistence.swift */,
@@ -165,6 +168,7 @@
 				B673DFF42D73DEC6002DDBA3 /* Login.swift in Sources */,
 				B673DF792D662554002DDBA3 /* DailyWorkoutApp.swift in Sources */,
 				B673DF852D662555002DDBA3 /* DailyWorkout.xcdatamodeld in Sources */,
+				B673E05F2D7CBAE8002DDBA3 /* CompleteWorkout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

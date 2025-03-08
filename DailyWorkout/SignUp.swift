@@ -86,7 +86,7 @@ struct SignUp: View {
                     Divider()
                         .frame(width: geometry.size.width * 0.9)
                     
-                   
+                    
                     
                     
                     HStack {
@@ -99,9 +99,9 @@ struct SignUp: View {
                                 .padding(.horizontal)
                                 .border(.indigo)
                             DatePicker("", selection: $workoutPlanStartDate, displayedComponents: .date)
-                            .datePickerStyle(.compact)
-                            .padding(.trailing, 35)
-
+                                .datePickerStyle(.compact)
+                                .padding(.trailing, 35)
+                            
                         }
                     }
                     
