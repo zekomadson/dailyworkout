@@ -69,6 +69,18 @@ struct ContentView: View {
                                 )
                         }
                         
+                        NavigationLink(destination: Affirmations()) {
+                            Text("Affirmations")
+                                .font(.largeTitle)
+                                .foregroundStyle(.indigo)
+                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.indigo, lineWidth: 3)
+                                )
+                        }
+                        
                     }
                     Spacer()
                 }
