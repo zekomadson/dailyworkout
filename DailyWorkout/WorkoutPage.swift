@@ -98,6 +98,8 @@ struct WorkoutPage: View {
         , "Nature loves courage.\n You make the commitment and nature will respond to that commitment by removing impossible obstacles."
         ,"Wilson's Law\nIf you prioritize knowledge and intelligence,\nmoney will continue to come."
         ,"Everything I do is for the 17-year-old version of myself."
+        ,"Ego rushes and reacts, but peace moves purposefully and gently."
+        ,"Do small things.\nWith great love."
     ]
     
     var body : some View {
