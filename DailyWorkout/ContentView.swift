@@ -28,7 +28,7 @@ struct ContentView: View {
                     Spacer()
                     
                     VStack(spacing:20){
-                        
+                        /*
                         NavigationLink(destination: SignUp()) {
                             // TODO: Navigate to Signup Page
                             // Phone Number or User Name or Email
@@ -56,6 +56,7 @@ struct ContentView: View {
                                         .stroke(.indigo, lineWidth: 3)
                                 )
                         }
+                         */
                         
                         NavigationLink(destination: WorkoutPage()) {
                             Text("Workout Page")
