@@ -23,6 +23,7 @@ struct Affirmations: View {
         ,"You are patient and supportive, giving others the space and encouragement they need."
     ]
     
+    
     var body : some View {
         
         let workoutNum  = daysSinceDate(dateString: startDate)
@@ -39,27 +40,46 @@ struct Affirmations: View {
                 
                 Spacer()
                 
-                Text(affirmations[workoutNum % affirmations.count])
-                    .foregroundStyle(.indigo)
-                    .font(.title2)
-                    .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.5)
-                    .frame(height: geometry.size.height * 0.17)
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
+                VStack {
+                    
+                    let exerciseText = generateAffirmationExcerciseDesc()
+                    Text(exerciseText)
+                        .foregroundStyle(.indigo)
+                        .font(.title)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.5)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                    
+                    let affirmationText = affirmations[workoutNum % affirmations.count]
+                    Text(affirmationText)
+                        .foregroundStyle(.indigo)
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.5)
+                        .frame(height: geometry.size.height * 0.17)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                    
+                }
+                
                 
                 Spacer()
                 
                 Spacer()
-
-                Divider()
-                    .frame(width: geometry.size.width * 0.9)
-                    .padding(.bottom)
                 
             }
         }
     }
     
+    func generateAffirmationExcerciseDesc() -> String {
+        
+        let excerciseCount = Int.random(in: 5...10)
+        let exerciseText = "Repeat the below phrase \(excerciseCount) times. Out loud."
+        
+        return exerciseText
+
+    }
     
     func daysSinceDate(dateString: String) -> Int {
         let dateFormatter = DateFormatter()
