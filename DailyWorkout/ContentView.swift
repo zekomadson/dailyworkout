@@ -19,7 +19,7 @@ struct ContentView: View {
             GeometryReader { geometry in
                 
                 VStack {
-                    Text("Welcome to Daily Workout")
+                    Text("Daily Habit")
                         .font(.largeTitle)
                         .padding(.vertical)
                         .frame(maxWidth: .infinity)
@@ -28,35 +28,6 @@ struct ContentView: View {
                     Spacer()
                     
                     VStack(spacing:20){
-                        /*
-                        NavigationLink(destination: SignUp()) {
-                            // TODO: Navigate to Signup Page
-                            // Phone Number or User Name or Email
-                            // Password
-                            // Start Date
-                            Text("Signup")
-                                .font(.largeTitle)
-                                .foregroundStyle(.indigo)
-                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
-                                .padding()
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(.indigo, lineWidth: 3)
-                                )
-                        }
-                        
-                        NavigationLink(destination: Login()) {
-                            Text("Login")
-                                .font(.largeTitle)
-                                .foregroundStyle(.indigo)
-                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
-                                .padding()
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(.indigo, lineWidth: 3)
-                                )
-                        }
-                         */
                         
                         NavigationLink(destination: WorkoutPage()) {
                             Text("Workout Page")
@@ -94,6 +65,18 @@ struct ContentView: View {
                                 )
                         }
 
+                        NavigationLink(destination: Pronunciation()) {
+                            Text("Pronunciation")
+                                .font(.largeTitle)
+                                .foregroundStyle(.indigo)
+                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.indigo, lineWidth: 3)
+                                )
+                        }
+                        
                     }
                     Spacer()
                 }
