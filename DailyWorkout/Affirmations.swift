@@ -23,10 +23,14 @@ struct Affirmations: View {
         ,"You are patient and supportive, giving others the space and encouragement they need."
     ]
     
+    @State private var exerciseText = ""
+    @State private var affirmationText = ""
     
+    init() {
+        _exerciseText = State(initialValue: generateAffirmationExcerciseDesc())
+        _affirmationText = State(initialValue: generateAffirmationText())
+    }
     var body : some View {
-        
-        let workoutNum  = daysSinceDate(dateString: startDate)
         
         GeometryReader { geometry in
             
@@ -42,7 +46,6 @@ struct Affirmations: View {
                 
                 VStack {
                     
-                    let exerciseText = generateAffirmationExcerciseDesc()
                     Text(exerciseText)
                         .foregroundStyle(.indigo)
                         .font(.title)
@@ -51,7 +54,6 @@ struct Affirmations: View {
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal)
                     
-                    let affirmationText = affirmations[workoutNum % affirmations.count]
                     Text(affirmationText)
                         .foregroundStyle(.indigo)
                         .font(.title2)
@@ -63,10 +65,24 @@ struct Affirmations: View {
                     
                 }
                 
-                
                 Spacer()
                 
-                Spacer()
+                
+                Button(action: {
+                    exerciseText = generateAffirmationExcerciseDesc()
+                    affirmationText = generateAffirmationText()
+                }) {
+                    Text("Generate New Exercise")
+                        .font(.title)
+                        .foregroundStyle(.indigo)
+                        .minimumScaleFactor(0.5)
+                        .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.07)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.indigo, lineWidth: 3)
+                        )
+                }
                 
             }
         }
@@ -78,8 +94,18 @@ struct Affirmations: View {
         let exerciseText = "Repeat the below phrase \(excerciseCount) times. Out loud."
         
         return exerciseText
-
+        
     }
+    
+    func generateAffirmationText() -> String {
+        
+        let affirmationIdx = Int.random(in: 0..<affirmations.count)
+        let affirmationText = affirmations[affirmationIdx]
+        
+        return affirmationText
+        
+    }
+    
     
     func daysSinceDate(dateString: String) -> Int {
         let dateFormatter = DateFormatter()
