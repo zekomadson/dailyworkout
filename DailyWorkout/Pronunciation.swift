@@ -55,6 +55,7 @@ struct Pronunciation: View {
     var body : some View {
         
         GeometryReader { geometry in
+           
             
             VStack(spacing: 0){
                 
@@ -66,6 +67,14 @@ struct Pronunciation: View {
                     .multilineTextAlignment(.center)
                 
                 Spacer()
+                
+                let repeatHeaderText = "Repeat these phrases\n10 - 12 times each."
+                Text(repeatHeaderText)
+                    .font(.title)
+                    .foregroundStyle(.indigo)
+                    .frame(maxWidth:.infinity)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom)
                 
                 VStack {
                     let minimalPairHeader = "Minimal Pair:"
@@ -83,7 +92,7 @@ struct Pronunciation: View {
                         .padding(.horizontal)
         
                 }
-                .frame(width: geometry.size.width * 0.9)
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.09)
                 .padding(.bottom)
                 .background(.indigo.gradient)
                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
@@ -106,7 +115,7 @@ struct Pronunciation: View {
                     
                     
                 }
-                .frame(width: geometry.size.width * 0.9)
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.09)
                 .padding(.bottom)
                 .background(.indigo.gradient)
                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
@@ -128,12 +137,16 @@ struct Pronunciation: View {
                         .padding(.horizontal)
         
                 }
-                .frame(width: geometry.size.width * 0.9)
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.09)
                 .padding(.bottom)
                 .background(.indigo.gradient)
                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
                 .padding(.bottom)
 
+                Divider()
+                    .frame(width: geometry.size.width * 0.9)
+                    .padding(.bottom)
+                
                 VStack {
                     let longFormHeader = "Long Form Exercise:"
 
@@ -150,7 +163,7 @@ struct Pronunciation: View {
                         .padding(.horizontal)
         
                 }
-                .frame(width: geometry.size.width * 0.9)
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.12)
                 .padding(.bottom)
                 .background(.indigo.gradient)
                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 10.0)))
